@@ -63,7 +63,8 @@ julia> Pkg.add("Repos")
 
 ## Documentation
 
-Link will be here shortly
+Full documentation can be found here:
+[https://bridgewalker.github.io/Repos.jl](https://bridgewalker.github.io/Repos.jl)
 
 ## Project Status
 
