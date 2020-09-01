@@ -8,7 +8,40 @@ Importantly, the time required for these operations is independent of the number
 
 ## Example
 
-TODO
+```julia
+julia> using Repos
+
+julia> a=["Pepsis grossa","Smilodon populator","Nothrotheriops texanus","Phoberomys pattersoni"]
+4-element Array{String,1}:
+ "Pepsis grossa"
+ "Smilodon populator"
+ "Nothrotheriops texanus"
+ "Phoberomys pattersoni"
+
+julia> animals=Repo(a,2)
+Repository of 4 objects in 2 classes
+
+julia> alive=class(animals,2)
+Class of 0 objects
+
+julia> setclass!(animals,1,2)
+
+julia> print_repo(animals)
+Repository of 2 classes
+  Class 1
+    1 - 4: Phoberomys pattersoni
+    2 - 2: Smilodon populator
+    3 - 3: Nothrotheriops texanus
+  Class 2
+    1 - 1: Pepsis grossa
+
+julia> print_repo(alive)
+Class of 1 objects
+    1 - 1: Pepsis grossa
+
+julia> alive[1]
+"Pepsis grossa"
+```
 
 ## Installation
 
