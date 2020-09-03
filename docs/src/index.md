@@ -8,38 +8,6 @@ Importantly, the time required for these operations is independent of the number
 
 ## Example
 
-```jldoctest
-julia> using Repos
-
-julia> a=["Pepsis grossa","Smilodon populator","Nothrotheriops texanus"]
-3-element Array{String,1}:
- "Pepsis grossa"
- "Smilodon populator"
- "Nothrotheriops texanus"
-
-julia> animals=Repo(a,2)
-Repository of 3 objects in 2 classes
-
-julia> alive=class(animals,2)
-Class of 0 objects
-
-julia> setclass!(animals,1,2)
-
-julia> print_repo(animals)
-Repository of 2 classes
-  Class 1
-    1 - 2: Smilodon populator
-    2 - 3: Nothrotheriops texanus
-  Class 2
-    1 - 1: Pepsis grossa
-
-julia> print_repo(alive)
-Class of 1 objects
-    1 - 1: Pepsis grossa
-
-julia> alive[1]
-"Pepsis grossa"
-```
 
 ## Project Status
 
