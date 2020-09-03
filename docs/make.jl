@@ -1,3 +1,7 @@
+
+using Pkg
+Pkg.activate(".")
+
 using Documenter
 using Repos
 
@@ -14,4 +18,4 @@ makedocs(
     ]
 )
 
-deploydocs(repo="github.com/bridgewalker/Repos.jl.git",devbranch="gh-pages")
+#deploydocs(repo="github.com/bridgewalker/Repos.jl.git",devbranch="gh-pages")
