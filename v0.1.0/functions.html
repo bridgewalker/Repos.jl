@@ -76,7 +76,7 @@ julia&gt; repo_id(r,1)
 10
 
 julia&gt; repo_id(r,3,1)
-1</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/bridgewalker/Repos.jl/blob/1e104c612a208c17f247c4106bbe95f0469a3192/src/id.jl#L2-L31">source</a></section></article><p>To determine the size of the repository or the elements in a certain class use the length() function.</p><h3 id="Examples"><a class="docs-heading-anchor" href="#Examples">Examples</a><a id="Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Examples" title="Permalink"></a></h3><pre><code class="language-julia-repl">julia&gt; using Repos
+1</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/bridgewalker/Repos.jl/blob/1e104c612a208c17f247c4106bbe95f0469a3192/src/id.jl#L2-L31">source</a></section></article><p>To determine the size of the repository or the elements in a certain class use the length() function.</p><h5 id="Example"><a class="docs-heading-anchor" href="#Example">Example</a><a id="Example-1"></a><a class="docs-heading-anchor-permalink" href="#Example" title="Permalink"></a></h5><pre><code class="language-julia-repl">julia&gt; using Repos
 
 julia&gt; villain=Repo([&quot;Dracula&quot;,&quot;Frankenstein&quot;,&quot;Hyde&quot;,&quot;Catwoman&quot;],2)
 Repository of 4 objects in 2 classes
@@ -96,7 +96,7 @@ julia&gt; length(victorian)
 3
 
 julia&gt; length(modern)
-1</code></pre><h2 id="Element-access"><a class="docs-heading-anchor" href="#Element-access">Element access</a><a id="Element-access-1"></a><a class="docs-heading-anchor-permalink" href="#Element-access" title="Permalink"></a></h2><p>You can access element with &quot;[]&quot; like you would in a vector. The elements can be identified either by their id or by class and position. (see the notes on position, above)</p><pre><code class="language-julia-repl">julia&gt; using Repos
+1</code></pre><h2 id="Element-access"><a class="docs-heading-anchor" href="#Element-access">Element access</a><a id="Element-access-1"></a><a class="docs-heading-anchor-permalink" href="#Element-access" title="Permalink"></a></h2><p>You can access element with &quot;[]&quot; like you would in a vector. The elements can be identified either by their id or by class and position. (see the notes on position, above)</p><h5 id="Example-2"><a class="docs-heading-anchor" href="#Example-2">Example</a><a class="docs-heading-anchor-permalink" href="#Example-2" title="Permalink"></a></h5><pre><code class="language-julia-repl">julia&gt; using Repos
 
 julia&gt; numbers=Repo([1:1000...],2)
 Repository of 1000 objects in 2 classes
@@ -122,7 +122,7 @@ julia&gt; numbers[1]=-7
 -7
 
 julia&gt; numbers[1,1]
--7</code></pre><p>If you created a Repo from an array you can also change the repo elements by changing the original array (Repo does not hardcopy the array at creation.)</p><h3 id="Example"><a class="docs-heading-anchor" href="#Example">Example</a><a id="Example-1"></a><a class="docs-heading-anchor-permalink" href="#Example" title="Permalink"></a></h3><pre><code class="language-julia-repl">julia&gt; using Repos
+-7</code></pre><p>If you created a Repo from an array you can also change the repo elements by changing the original array (Repo does not hardcopy the array at creation.)</p><h5 id="Example-3"><a class="docs-heading-anchor" href="#Example-3">Example</a><a class="docs-heading-anchor-permalink" href="#Example-3" title="Permalink"></a></h5><pre><code class="language-julia-repl">julia&gt; using Repos
 
 julia&gt; cities=[&quot;Kuala Lumpur&quot;,&quot;Moscow&quot;,&quot;San Francisco&quot;,&quot;London&quot;,&quot;Rio de Janeiro&quot;]
 5-element Array{String,1}:
@@ -159,4 +159,59 @@ julia&gt; repo[5]
 &quot;Bristol&quot;
 
 julia&gt; repo[2,1]
-&quot;Bristol&quot;</code></pre><h2 id="Iteration"><a class="docs-heading-anchor" href="#Iteration">Iteration</a><a id="Iteration-1"></a><a class="docs-heading-anchor-permalink" href="#Iteration" title="Permalink"></a></h2><h2 id="Printing"><a class="docs-heading-anchor" href="#Printing">Printing</a><a id="Printing-1"></a><a class="docs-heading-anchor-permalink" href="#Printing" title="Permalink"></a></h2></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="project.html">« About the package</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Friday 4 September 2020 10:41">Friday 4 September 2020</span>. Using Julia version 1.4.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+&quot;Bristol&quot;</code></pre><h2 id="Iteration"><a class="docs-heading-anchor" href="#Iteration">Iteration</a><a id="Iteration-1"></a><a class="docs-heading-anchor-permalink" href="#Iteration" title="Permalink"></a></h2><p>You can iterate over either the Repo or a RepoClass using standard &quot;for&quot; iteration.</p><h5 id="Example-4"><a class="docs-heading-anchor" href="#Example-4">Example</a><a class="docs-heading-anchor-permalink" href="#Example-4" title="Permalink"></a></h5><pre><code class="language-julia-repl">julia&gt; using Repos
+
+julia&gt; rock=Repo([&quot;Granite&quot;,&quot;Diorite&quot;,&quot;Gabbro&quot;,&quot;Andesite&quot;,&quot;Basalt&quot;],2)
+Repository of 5 objects in 2 classes
+
+julia&gt; setclass!(rock,3,2)
+
+julia&gt; setclass!(rock,5,2)
+
+julia&gt; mafic=class(rock,2)
+Class of 2 objects
+
+julia&gt; for x in rock println(x) end
+Granite
+Diorite
+Gabbro
+Andesite
+Basalt
+
+julia&gt; for x in mafic println(x) end
+Basalt
+Gabbro</code></pre><p>When iterating over the whole Repo the elements are presented in order of element id. When iterating over a class the elements are presented in the order of position withinthe class. So the order can change whenever setclass!() is called.</p><p>In the case where functions in the for loop change the class of elements the iteration will still run over all objects that were in the respective class at the start of the loop. So every object that is in the respective class when the iteration starts will be iterated over exactly once.  </p><p>If different behavior is desired iterate over the elements using the length() and [].</p><h2 id="Printing"><a class="docs-heading-anchor" href="#Printing">Printing</a><a id="Printing-1"></a><a class="docs-heading-anchor-permalink" href="#Printing" title="Permalink"></a></h2><p>For debugging purposes an overview of a Repo or RepoClass object can be printed. </p><article class="docstring"><header><a class="docstring-binding" id="Repos.print_repo-Union{Tuple{T}, Tuple{Repo{T}}, Tuple{Repo{T},Int64}} where T" href="#Repos.print_repo-Union{Tuple{T}, Tuple{Repo{T}}, Tuple{Repo{T},Int64}} where T"><code>Repos.print_repo</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia">print_repo(repo::Repo{T},nax::Int=10)
+print_repo(cls::RepoClass{T},max::Int=10)
+print_repo(io::IO,repo::Repo{T},nax::Int=10)
+print_repo(io::IO,cls::RepoClass{T},max::Int=10)</code></pre><p>Print a summary of the contents of the repository repo or the repository class cls to REPL or another IO device.</p><p>The output lists the classes and shows the first and last entries in every class. For each entry the current position in the class, the id of the entry, and the content of the entry are printed.</p><p>An optional parameter max can be specified to control the number of entries that are shown in every repository class. If this parameter is set to less than 2 all entries are shown. (Warning: For large repositories this can take a while)</p><p><strong>Example</strong></p><pre><code class="language-julia-repl">julia&gt; using Repos
+
+julia&gt; r=Repo([&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;,&quot;F&quot;,&quot;G&quot;],2)
+Repository of 7 objects in 2 classes
+
+julia&gt; setclass!(r,1,2)
+
+julia&gt; setclass!(r,5,2)
+
+julia&gt; vowels=class(r,2)
+Class of 2 objects
+
+julia&gt; print_repo(vowels)
+Class of 2 objects
+    1 - 5: E
+    2 - 1: A
+
+julia&gt; r=Repo([1:10000...],2)
+Repository of 10000 objects in 2 classes
+
+julia&gt; setclass!(r,1337,2)
+
+julia&gt; print_repo(r,4)
+Repository of 2 classes
+  Class 1
+    1 - 1: 1
+    2 - 2: 2
+    ...
+    9998 - 9998: 9998
+    9999 - 9999: 9999
+  Class 2
+    1 - 1337: 1337</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/bridgewalker/Repos.jl/blob/1e104c612a208c17f247c4106bbe95f0469a3192/src/print.jl#L2-L56">source</a></section></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="project.html">« About the package</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Friday 4 September 2020 11:04">Friday 4 September 2020</span>. Using Julia version 1.4.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
