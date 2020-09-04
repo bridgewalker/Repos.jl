@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>List of functions · Repos.jl</title><link rel="canonical" href="https://bridgewalker.github.io/Repos.jl/stable/functions.html"/><link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Mono" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="assets/documenter.js"></script><script src="siteinfo.js"></script><script src="../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-dark.css" data-theme-name="documenter-dark"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="assets/themeswap.js"></script><link href="assets/favicon.ico" rel="icon" type="image/x-icon"/></head><body><div id="documenter"><nav class="docs-sidebar"><a class="docs-logo" href="index.html"><img class="docs-light-only" src="assets/logo.png" alt="Repos.jl logo"/><img class="docs-dark-only" src="assets/logo-dark.png" alt="Repos.jl logo"/></a><div class="docs-package-name"><span class="docs-autofit">Repos.jl</span></div><form class="docs-search" action="search.html"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="index.html">Getting started</a></li><li><a class="tocitem" href="project.html">About the package</a></li><li class="is-active"><a class="tocitem" href="functions.html">List of functions</a><ul class="internal"><li><a class="tocitem" href="#Construction"><span>Construction</span></a></li><li><a class="tocitem" href="#Class-functions"><span>Class functions</span></a></li><li><a class="tocitem" href="#ID-and-Length"><span>ID and Length</span></a></li><li><a class="tocitem" href="#Iteration"><span>Iteration</span></a></li><li><a class="tocitem" href="#Printing"><span>Printing</span></a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href="functions.html">List of functions</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href="functions.html">List of functions</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/bridgewalker/Repos.jl/blob/master/docs/src/functions.md" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="Function-reference"><a class="docs-heading-anchor" href="#Function-reference">Function reference</a><a id="Function-reference-1"></a><a class="docs-heading-anchor-permalink" href="#Function-reference" title="Permalink"></a></h1><p>This page contains the complete documentation of Repo functions. Between I have inserted some comments and explanations of the underlying philosophy, as well as some usage notes.</p><h2 id="Construction"><a class="docs-heading-anchor" href="#Construction">Construction</a><a id="Construction-1"></a><a class="docs-heading-anchor-permalink" href="#Construction" title="Permalink"></a></h2><p>Repo objects can be constructed either from an existing 1-dimensional array or by specifying the element type and number. In both cases the number of classes must be specified.</p><article class="docstring"><header><a class="docstring-binding" id="Repos.Repo-Union{Tuple{Int64,Int64}, Tuple{T}} where T" href="#Repos.Repo-Union{Tuple{Int64,Int64}, Tuple{T}} where T"><code>Repos.Repo</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia">Repo{T}(N::Int,C::Int) where T</code></pre><p>Create a repository that organizes N elements of type T into C classes.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl">julia&gt; using Repos
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>List of functions · Repos.jl</title><link rel="canonical" href="https://bridgewalker.github.io/Repos.jl/stable/functions.html"/><link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Mono" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="assets/documenter.js"></script><script src="siteinfo.js"></script><script src="../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-dark.css" data-theme-name="documenter-dark"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="assets/themeswap.js"></script><link href="assets/favicon.ico" rel="icon" type="image/x-icon"/></head><body><div id="documenter"><nav class="docs-sidebar"><a class="docs-logo" href="index.html"><img class="docs-light-only" src="assets/logo.png" alt="Repos.jl logo"/><img class="docs-dark-only" src="assets/logo-dark.png" alt="Repos.jl logo"/></a><div class="docs-package-name"><span class="docs-autofit">Repos.jl</span></div><form class="docs-search" action="search.html"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="index.html">Getting started</a></li><li><a class="tocitem" href="project.html">About the package</a></li><li class="is-active"><a class="tocitem" href="functions.html">List of functions</a><ul class="internal"><li><a class="tocitem" href="#Construction"><span>Construction</span></a></li><li><a class="tocitem" href="#Class-functions"><span>Class functions</span></a></li><li><a class="tocitem" href="#ID-and-Length"><span>ID and Length</span></a></li><li><a class="tocitem" href="#Element-access"><span>Element access</span></a></li><li><a class="tocitem" href="#Iteration"><span>Iteration</span></a></li><li><a class="tocitem" href="#Printing"><span>Printing</span></a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href="functions.html">List of functions</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href="functions.html">List of functions</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/bridgewalker/Repos.jl/blob/master/docs/src/functions.md" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="Function-reference"><a class="docs-heading-anchor" href="#Function-reference">Function reference</a><a id="Function-reference-1"></a><a class="docs-heading-anchor-permalink" href="#Function-reference" title="Permalink"></a></h1><p>This page contains the complete documentation of Repo functions. Between I have inserted some comments and explanations of the underlying philosophy, as well as some usage notes.</p><h2 id="Construction"><a class="docs-heading-anchor" href="#Construction">Construction</a><a id="Construction-1"></a><a class="docs-heading-anchor-permalink" href="#Construction" title="Permalink"></a></h2><p>Repo objects can be constructed either from an existing 1-dimensional array or by specifying the element type and number. In both cases the number of classes must be specified.</p><article class="docstring"><header><a class="docstring-binding" id="Repos.Repo-Union{Tuple{Int64,Int64}, Tuple{T}} where T" href="#Repos.Repo-Union{Tuple{Int64,Int64}, Tuple{T}} where T"><code>Repos.Repo</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia">Repo{T}(N::Int,C::Int) where T</code></pre><p>Create a repository that organizes N elements of type T into C classes.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl">julia&gt; using Repos
 
 julia&gt; r=Repo{String}(50000,4)
 Repository of 50000 objects in 4 classes</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/bridgewalker/Repos.jl/blob/1e104c612a208c17f247c4106bbe95f0469a3192/src/construction.jl#L2-L14">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="Repos.Repo-Union{Tuple{T}, Tuple{Array{T,1},Int64}} where T" href="#Repos.Repo-Union{Tuple{T}, Tuple{Array{T,1},Int64}} where T"><code>Repos.Repo</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia">Repo(a::Array,C::Int)</code></pre><p>Create a repository that organizes an existing array into C classes.</p><p>The repository will not copy the array, so the memory is only allocated once and any changes you make in the array will be reflected in the repository.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl">julia&gt; using Repos
@@ -76,12 +76,87 @@ julia&gt; repo_id(r,1)
 10
 
 julia&gt; repo_id(r,3,1)
-1</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/bridgewalker/Repos.jl/blob/1e104c612a208c17f247c4106bbe95f0469a3192/src/id.jl#L2-L31">source</a></section></article><p>To determine the size of the repository or the elements in a certain class use the length() function.</p><h3 id="Examples"><a class="docs-heading-anchor" href="#Examples">Examples</a><a id="Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Examples" title="Permalink"></a></h3><p>´``jldoctest julia&gt; using Repos</p><p>julia&gt; villain=Repo([&quot;Dracula&quot;,&quot;Frankenstein&quot;,&quot;Hyde&quot;,&quot;Catwoman&quot;],2) Repository of 4 objects in 2 classes</p><p>julia&gt; setclass!(villain,4,2)</p><p>julia&gt; victorian=class(villain,1) Class of 3 objects</p><p>julia&gt; modern=class(villain,2) Class of 1 objects</p><p>julia&gt; length(villain) 4</p><p>julia&gt; length(victorian) 3</p><p>julia&gt; length(modern) 1</p><pre><code class="language-none">
-## Element access
-You can access element with &quot;[]&quot; like you would in a vector. The elements can be identified either by their id or by class and position. (see the notes on position, above)
-</code></pre><p>jldoctest julia&gt; using Repos</p><p>julia&gt; numbers=Repo([1:1000...],2) Repository of 1000 objects in 2 classes</p><p>julia&gt; setclass!(numbers,123,2)</p><p>julia&gt; numbers[1] 1</p><p>julia&gt; numbers[123] 123</p><p>julia&gt; numbers[2,1] 123</p><p>julia&gt; numbers[2,1]=-5 -5</p><p>julia&gt; numbers[123] -5</p><p>julia&gt; numbers[1]=-7 -7</p><p>julia&gt; numbers[1,1] -7</p><pre><code class="language-none">
-If you created a Repo from an array you can also change the repo elements by changing the original array (Repo does not
-hardcopy the array at creation.)
+1</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/bridgewalker/Repos.jl/blob/1e104c612a208c17f247c4106bbe95f0469a3192/src/id.jl#L2-L31">source</a></section></article><p>To determine the size of the repository or the elements in a certain class use the length() function.</p><h3 id="Examples"><a class="docs-heading-anchor" href="#Examples">Examples</a><a id="Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Examples" title="Permalink"></a></h3><pre><code class="language-julia-repl">julia&gt; using Repos
 
-### Example
-</code></pre><p>jldoctest julia&gt; using Repos</p><p>julia&gt; cities=[&quot;Kuala Lumpur&quot;,&quot;Moscow&quot;,&quot;San Francisco&quot;,&quot;London&quot;,&quot;Rio de Janeiro&quot;] 5-element Array{String,1}:  &quot;Kuala Lumpur&quot;  &quot;Moscow&quot;  &quot;San Francisco&quot;  &quot;London&quot;  &quot;Rio de Janeiro&quot;</p><p>julia&gt; repo=Repo(cities,2) Repository of 5 objects in 2 classes</p><p>julia&gt; capitals=class(repo,1) Class of 5 objects</p><p>julia&gt; setclass!(repo,3,2)</p><p>julia&gt; setclass!(repo,5,2)</p><p>julia&gt; print_repo(repo) Repository of 2 classes   Class 1     1 - 1: Kuala Lumpur     2 - 2: Moscow     3 - 4: London   Class 2     1 - 5: Rio de Janeiro     2 - 3: San Francisco</p><p>julia&gt; cities[5] = &quot;Bristol&quot; &quot;Bristol&quot;</p><p>julia&gt; repo[5] &quot;Bristol&quot;</p><p>julia&gt; repo[2,1] &quot;Bristol&quot; ```</p><h2 id="Iteration"><a class="docs-heading-anchor" href="#Iteration">Iteration</a><a id="Iteration-1"></a><a class="docs-heading-anchor-permalink" href="#Iteration" title="Permalink"></a></h2><h2 id="Printing"><a class="docs-heading-anchor" href="#Printing">Printing</a><a id="Printing-1"></a><a class="docs-heading-anchor-permalink" href="#Printing" title="Permalink"></a></h2></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="project.html">« About the package</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Friday 4 September 2020 10:22">Friday 4 September 2020</span>. Using Julia version 1.4.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+julia&gt; villain=Repo([&quot;Dracula&quot;,&quot;Frankenstein&quot;,&quot;Hyde&quot;,&quot;Catwoman&quot;],2)
+Repository of 4 objects in 2 classes
+
+julia&gt; setclass!(villain,4,2)
+
+julia&gt; victorian=class(villain,1)
+Class of 3 objects
+
+julia&gt; modern=class(villain,2)
+Class of 1 objects
+
+julia&gt; length(villain)
+4
+
+julia&gt; length(victorian)
+3
+
+julia&gt; length(modern)
+1</code></pre><h2 id="Element-access"><a class="docs-heading-anchor" href="#Element-access">Element access</a><a id="Element-access-1"></a><a class="docs-heading-anchor-permalink" href="#Element-access" title="Permalink"></a></h2><p>You can access element with &quot;[]&quot; like you would in a vector. The elements can be identified either by their id or by class and position. (see the notes on position, above)</p><pre><code class="language-julia-repl">julia&gt; using Repos
+
+julia&gt; numbers=Repo([1:1000...],2)
+Repository of 1000 objects in 2 classes
+
+julia&gt; setclass!(numbers,123,2)
+
+julia&gt; numbers[1]
+1
+
+julia&gt; numbers[123]
+123
+
+julia&gt; numbers[2,1]
+123
+
+julia&gt; numbers[2,1]=-5
+-5
+
+julia&gt; numbers[123]
+-5
+
+julia&gt; numbers[1]=-7
+-7
+
+julia&gt; numbers[1,1]
+-7</code></pre><p>If you created a Repo from an array you can also change the repo elements by changing the original array (Repo does not hardcopy the array at creation.)</p><h3 id="Example"><a class="docs-heading-anchor" href="#Example">Example</a><a id="Example-1"></a><a class="docs-heading-anchor-permalink" href="#Example" title="Permalink"></a></h3><pre><code class="language-julia-repl">julia&gt; using Repos
+
+julia&gt; cities=[&quot;Kuala Lumpur&quot;,&quot;Moscow&quot;,&quot;San Francisco&quot;,&quot;London&quot;,&quot;Rio de Janeiro&quot;]
+5-element Array{String,1}:
+ &quot;Kuala Lumpur&quot;
+ &quot;Moscow&quot;
+ &quot;San Francisco&quot;
+ &quot;London&quot;
+ &quot;Rio de Janeiro&quot;
+
+julia&gt; repo=Repo(cities,2)
+Repository of 5 objects in 2 classes
+
+julia&gt; capitals=class(repo,1)
+Class of 5 objects
+
+julia&gt; setclass!(repo,3,2)
+
+julia&gt; setclass!(repo,5,2)
+
+julia&gt; print_repo(repo)
+Repository of 2 classes
+  Class 1
+    1 - 1: Kuala Lumpur
+    2 - 2: Moscow
+    3 - 4: London
+  Class 2
+    1 - 5: Rio de Janeiro
+    2 - 3: San Francisco
+
+julia&gt; cities[5] = &quot;Bristol&quot;
+&quot;Bristol&quot;
+
+julia&gt; repo[5]
+&quot;Bristol&quot;
+
+julia&gt; repo[2,1]
+&quot;Bristol&quot;</code></pre><h2 id="Iteration"><a class="docs-heading-anchor" href="#Iteration">Iteration</a><a id="Iteration-1"></a><a class="docs-heading-anchor-permalink" href="#Iteration" title="Permalink"></a></h2><h2 id="Printing"><a class="docs-heading-anchor" href="#Printing">Printing</a><a id="Printing-1"></a><a class="docs-heading-anchor-permalink" href="#Printing" title="Permalink"></a></h2></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="project.html">« About the package</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Friday 4 September 2020 10:41">Friday 4 September 2020</span>. Using Julia version 1.4.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
