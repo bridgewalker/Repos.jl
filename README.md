@@ -1,6 +1,6 @@
 # Repos.jl
 
-*Repos provides a highly efficient data structure (Repo) that can be used for organizing data into a set of "classes".*
+**Repos provides a highly efficient data structure (Repo) that can be used for organizing data into a set of "classes".**
 
 Repo behaves like an array, where you can additionally assign each element of the array to a "class". You can dynamically change the an element's class, find out how many elements are in a certain class, iterate through the elements in a given class or pick a single element from a class (e.g. at random).
 
@@ -69,3 +69,6 @@ Full documentation can be found here:
 ## Project Status
 
 This package was tested on Julia 1.4.2 on Windows.
+
+## Acknowledgements
+The original development of Repo was supported by the Volkswagen foundation. The current implementation in Julia was developed at HIFMB, a collaboration between the Alfred-Wegener-Institute, Helmholtz-Center for Polar and Marine Research, and the Carl-von-Ossietzky University Oldenburg, initially funded by the Ministry for Science and Culture of Lower Saxony (MWK) and the Volkswagen Foundation through the “Nieders&auml;chsisches Vorab” grant program (grant number ZN3285).
