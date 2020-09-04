@@ -17,7 +17,7 @@ function Base.setindex!(repo::Repo{T},val::T,id::Int) where T
 end
 
 function Base.setindex!(repo::Repo{T},val::T,c::Int,pos::Int) where T
-    p=repo.starts[c]+pos-1
+    p=repo.starts[cls]+pos-1
     id=repo.ids[p]
     repo.cargo[id]=val
 end

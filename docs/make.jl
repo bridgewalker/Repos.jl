@@ -1,24 +1,21 @@
 
 using Pkg
-Pkg.activate("../.")
+Pkg.activate(".")
 
 using Documenter
 using Repos
-
-
 
 makedocs(
     modules     = [Repos],
     format = Documenter.HTML(
         prettyurls = false,
         canonical = "https://bridgewalker.github.io/Repos.jl/stable/",
-        assets = ["assets/favicon.ico"],
+        assets = ["assets//favicon.ico","assets//myjs.js","assets/mystyle.css"],
     ),
     sitename    = "Repos.jl",
     pages       = Any[
-        "Getting Started"                   => "index.md",
+        "Getting started"                   => "index.md",
+        "About the package"                 => "project.md",
+        "List of functions"                 => "functions.md"
     ]
-
 )
-
-#deploydocs(repo="github.com/bridgewalker/Repos.jl.git",devbranch="gh-pages")
