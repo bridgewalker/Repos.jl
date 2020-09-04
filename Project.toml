@@ -1,7 +1,7 @@
 name = "Repos"
 uuid = "952dd333-a03f-400d-b720-7cb119ba64f7"
 authors = ["Thilo Gross <thilo2gross@gmail.com>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [compat]
 julia = "1"

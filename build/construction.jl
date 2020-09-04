@@ -1,6 +1,6 @@
 
 """
-    Repo{T}(N::Int,C::Int) where T
+    Repo{T}(N::Int,C::Int)
 
 Create a repository that organizes N elements of type T into C classes.
 
@@ -12,7 +12,7 @@ julia> r=Repo{String}(50000,4)
 Repository of 50000 objects in 4 classes
 ```
 """
-function Repo{T}(N::Int,C::Int) where T
+function Repo{T}(N::Int,C::Int) where {T}
     starts=Array{Int,1}(undef,C)
     counts=Array{Int,1}(undef,C)
     ids=[1:N...]

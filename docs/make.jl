@@ -1,11 +1,21 @@
+
+using Pkg
+Pkg.activate(".")
+
 using Documenter
-using Repository
+using Repos
 
 makedocs(
-    modules     = [Repository],
-    format      = Documenter.HTML(),
-    sitename    = "Repository",
+    modules     = [Repos],
+    format = Documenter.HTML(
+        prettyurls = false,
+        canonical = "https://bridgewalker.github.io/Repos.jl/stable/",
+        assets = ["assets//favicon.ico","assets//myjs.js","assets/mystyle.css"],
+    ),
+    sitename    = "Repos.jl",
     pages       = Any[
-        "Getting Started"                   => "index.md",
+        "Getting started"                   => "index.md",
+        "About the package"                 => "project.md",
+        "List of functions"                 => "functions.md"
     ]
 )
