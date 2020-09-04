@@ -1,4 +1,4 @@
 
-p.footer-message::before {
-  content: "<p>Repos.jl is maintained by Thilo Gross<p>";
+a.docs-edit-link {
+  visibility: hidden;
 }
